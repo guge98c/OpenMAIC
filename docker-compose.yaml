@@ -1,0 +1,14 @@
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  openmaic:
+    image: kof0098c/openmaic:latest
+    container_name: openmaic
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
